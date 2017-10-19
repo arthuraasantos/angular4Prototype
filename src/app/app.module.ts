@@ -3,8 +3,7 @@ import { NgModule } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { NgModel } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UiSwitchModule } from '../../node_modules/angular2-ui-switch/src'
-
+import { UiSwitchModule } from 'ng2-ui-switch/'
 
 import { AppComponent } from './app.component';
 import { HeaderComponentComponent } from './header-component/header-component.component';
@@ -24,8 +23,8 @@ import { ItemsComponent } from './installments/items/items.component';
   ],
   imports: [
     BrowserModule,
-    UiSwitchModule,
-    FormsModule
+    FormsModule,
+    UiSwitchModule
 
   ],
   providers: [],
