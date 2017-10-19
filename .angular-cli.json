@@ -9,17 +9,7 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico",
-        {
-          "glob": "index.js",
-          "input": "./server/",
-          "output": "./"
-        },
-        {
-          "glob": "package.json",
-          "input": "./server/",
-          "output": "./"
-        }
+        "favicon.ico"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -35,7 +25,8 @@
         
       ],
       "scripts": [
-        "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js",
+        "../node_modules/angular2-ui-switch/dist/index.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

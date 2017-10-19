@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-// import { UiSwitchModule } from '../../node_modules/angular2-ui-switch/src'
+import { UiSwitchModule } from '../../node_modules/angular2-ui-switch/src'
 
 
 
@@ -19,7 +19,7 @@ import { SchedulesComponent } from './schedules/schedules.component';
   ],
   imports: [
     BrowserModule,
-    // UiSwitchModule
+    UiSwitchModule
 
   ],
   providers: [],
