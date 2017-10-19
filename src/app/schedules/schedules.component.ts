@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SchedulesComponent implements OnInit {
 
+  mySchedules:any = [];
   constructor() { }
 
   ngOnInit() {
