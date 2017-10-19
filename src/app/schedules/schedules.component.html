@@ -1,0 +1,109 @@
+
+<h2 class="top-margin">Agendar novo recebimento</h2>
+<div class="row">
+  <label></label>
+</div>
+<div class="row">
+    <label></label>
+  </div>
+<div class="row">
+  <div class="col-sm-2">
+      <label>Vencimento</label>
+    <input type="date" class="form-control">
+  </div>
+  <div class="col-sm-2 pull-right">
+      <label>Previsto para</label>
+    <input type="date" class="form-control">
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-4">
+    <label>Nome</label>
+      <input type="text" class="form-control" placeholder="Selecione um cliente">
+  </div>
+  <div class="col-sm-4">
+      <label>Valor</label>
+      <input type="text" class="form-control" placeholder="0,00">
+  </div>
+  <div class="col-sm-4">
+      <label>Categoria</label>
+      <input type="text" class="form-control" placeholder="Selecione uma categoria">
+  </div>
+</div>
+<div class="row">
+    <div class="col-sm-8">
+        <label>Descrição/Histórico(opcional)</label>
+        <input type="text" class="form-control" placeholder="Ex: Serviço prestado">
+    </div>
+    <div class="col-sm-4">
+        <label>Referência(opcional)</label>
+        <input type="text" class="form-control">
+    </div>    
+</div>
+<div class="row">
+  <label for=""></label>
+</div>
+<div class="row-fluid">
+  <div id="accordion" role="tablist">
+      <div class="card">
+        <div class="card-header" role="tab" id="headingOne">
+          <h5 class="mb-0">
+            <ui-switch id="checkedRecurrence"></ui-switch>
+            <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Tornar recorrente
+            </a>
+          </h5>
+        </div>
+        <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            Coisas da recorrencia
+          </div>
+        </div>
+      </div>
+      <div class="card">
+          <div class="card-header" role="tab" id="headingTwo">
+            <h5 class="mb-0">
+              <ui-switch id="checkedBilling"></ui-switch>              
+              <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Adicionar parcelas
+              </a>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+              Coisas de parcelas
+            </div>
+          </div>
+        </div>     
+      <div class="card">
+        <div class="card-header" role="tab" id="headingTwo">
+          <h5 class="mb-0">
+            <ui-switch id="checkedBilling"></ui-switch>
+            <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Cobrança
+            </a>
+          </h5>
+        </div>
+        <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+          <div class="card-body">
+            Coisas de boleto
+          </div>
+        </div>
+      </div>
+      <div class="card">
+          <div class="card-header" role="tab" id="headingTwo">
+            <h5 class="mb-0">
+              <ui-switch id="checkedBilling"></ui-switch>
+              <a class="collapsed" data-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Nota fiscal
+              </a>
+            </h5>
+          </div>
+          <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordion">
+            <div class="card-body">
+              Coisas de nota fiscal
+            </div>
+          </div>
+        </div>    
+    </div> 
+</div>
