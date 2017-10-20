@@ -1,0 +1,32 @@
+.frequency > .form-control-repeat{
+    width: 50px;
+}
+
+.frequency > .form-control{
+    width: 70px;    
+    display: inline;
+}
+
+.frequency > .select{
+    width: 120px;
+}
+
+.ocurrence > .form-control{
+    display: inline;
+}
+.xOcurrence{
+    width: 40px;
+}
+
+.xOcurrenceDate{
+    width: 175px;
+}
+
+.bq {
+    color: #7f888a;
+}
+
+.monthsBefore > .form-control{
+    width:  50px;
+    display: inline;
+}

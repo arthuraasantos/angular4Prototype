@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-schedules',
@@ -7,16 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SchedulesComponent implements OnInit {
 
-  public recurrenceEnabled: boolean = false;
-  public installmentsEnabled: boolean = false;
+  recurrenceEnabled: boolean = false;
+  recurrenceRepeatTimes: any = null;
+  recurrenceRepeatFrequency: any = 0;
+  recurrenceEndDate: number = 0;
+
+  installmentsEnabled: boolean = false;
   billingEnabled: boolean = false;
   invoiceEnabled: boolean = false;
-  public blockRecurrence: boolean = false;
-  public blockInstallments: boolean = false;
+  blockRecurrence: boolean = false;
+  blockInstallments: boolean = false;
 
+ 
+  schedule:any = {
+    recurrenceConfiguration : {},
+  };
+    
 
-
-  mySchedules:any = [];
+  
   constructor() { }
 
   ngOnInit() {
@@ -30,17 +38,23 @@ export class SchedulesComponent implements OnInit {
     }
     else {
       this.recurrenceEnabled = false;
+      this.resetRecurrence();
     }
   }
 
   enableInstallments(){
     if(!this.installmentsEnabled){
       this.recurrenceEnabled = false;
+      this.resetRecurrence();
       this.installmentsEnabled = true;
     }
     else{
       this.installmentsEnabled = false;
     }
+  }
+
+  resetRecurrence(){
+    this.schedule.recurrenceConfiguration = {};
   }
 
 }
