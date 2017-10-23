@@ -1,0 +1,16 @@
+.padding{
+    padding: 10px;
+}
+
+.form-control{
+  width: 50px;
+  display: inline;
+}
+
+.title{
+    font-weight: 800px;
+}
+
+.bq {
+    color: #7f888a;
+}

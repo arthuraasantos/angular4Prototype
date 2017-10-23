@@ -13,9 +13,12 @@ import { RecurrencesComponent } from './recurrences/recurrences.component';
 import { SchedulesComponent } from './schedules/schedules.component';
 import { InstallmentsComponent } from './installments/installments.component';
 import { ItemsComponent } from './installments/items/items.component';
+import { BillingComponent } from './schedules/billing/billing.component';
+import { InvoiceComponent } from './schedules/invoice/invoice.component';
+import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
-  { path: 'home', component: AppComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'schedules/new', component: SchedulesComponent },
   { path: '',
     redirectTo: '/home',
@@ -31,7 +34,10 @@ const appRoutes: Routes = [
     RecurrencesComponent,
     SchedulesComponent,
     InstallmentsComponent,
-    ItemsComponent
+    ItemsComponent,
+    BillingComponent,
+    InvoiceComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -8,10 +8,11 @@ import { Component, OnInit, Input } from '@angular/core';
 export class RecurrencesComponent implements OnInit {
   endTime: number; 
 
-
-  @Input() recurrence:any = {
+  recurrence:any = {
     times:null,
-    frequency: null
+    frequency: 0,
+    endDate: 0,
+    daysBefore: ""
   };
   
   constructor() { }

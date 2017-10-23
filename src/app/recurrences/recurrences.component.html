@@ -10,17 +10,14 @@
     </div>        
 </div>
 <div class="row">
-    <pre>Times: {{recurrence}}</pre>
-    <pre>Frequency: {{repeatFrequency}}</pre>
     <div class="col-md-4 frequency">
-        <!-- <input type="text" [(ngModel)]="recurrence.times" class="form-control repeat">
-        <input type="text" [(ngModel)]="recurrence.frequency" class="form-control repeat"> -->
-        <!-- <select class="form-control select" [(ngModel)]="repeatFrequency">
+        <input type="text" [(ngModel)]="recurrence.times" class="form-control repeat">
+        <select class="form-control select" [(ngModel)]="recurrence.frequency">
             <option value="0">dia(s)</option>
             <option value="1">semana(s)</option>
             <option value="2">mês(s)</option>
             <option value="3">ano(s)</option>
-        </select>    -->
+        </select>   
     </div>
     <div class="col-md-4">
         <input type="radio" [(ngModel)]="endTime" value="0">Indeterminado

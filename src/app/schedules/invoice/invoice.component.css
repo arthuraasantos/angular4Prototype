@@ -1,0 +1,22 @@
+.padding{
+    padding: 10px;
+}
+
+.bq {
+    color: #7f888a;
+}
+
+.bq2{
+    color: #a9b0b1;
+}
+
+
+.fullLabel{
+    width: 100%;
+    font-size: 13px;
+    margin-bottom: 2px;
+}
+
+.sendTo{
+    margin-bottom: 1px;
+}

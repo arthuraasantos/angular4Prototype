@@ -1,0 +1,11 @@
+.date{
+    width: 180px;
+}
+
+.jumbotron{
+    padding: 30px;
+    margin-top: 30px;
+    background-color: #dce2e8;
+    border: 2px solid rgb(128, 128, 128);
+    box-shadow: black;
+}

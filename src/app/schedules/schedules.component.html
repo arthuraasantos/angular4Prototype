@@ -6,13 +6,13 @@
     <label></label>
   </div>
 <div class="row">
-  <div class="col-sm-2">
+  <div class="col-sm-3">
       <label>Vencimento</label>
-    <input type="date" class="form-control">
+    <input type="date" class="form-control date">
   </div>
-  <div class="col-sm-2 pull-right">
+  <div class="col-sm-3">
       <label>Previsto para</label>
-    <input type="date" class="form-control">
+    <input type="date" class="form-control date">
   </div>
 </div>
 <div class="row">
@@ -56,7 +56,7 @@
         </div>
         <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body">
-              <app-schedules-recurrences [recurrence]="recurrenceConfiguration"></app-schedules-recurrences>
+              <app-schedules-recurrences></app-schedules-recurrences>
           </div>
         </div>
       </div>
@@ -80,13 +80,13 @@
           <h5 class="mb-0">
             <ui-switch id="checkedBilling" color="rgb(35,164,206)"></ui-switch>
             <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              Cobrar automaticamente
+              Cobrar automaticamente  
             </a>
           </h5>
         </div>
         <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
           <div class="card-body">
-            Coisas de boleto
+              <app-schedules-billing></app-schedules-billing>
           </div>
         </div>
       </div>
@@ -101,7 +101,7 @@
           </div>
           <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordion">
             <div class="card-body">
-              Coisas de nota fiscal
+              <app-schedules-invoice></app-schedules-invoice>
             </div>
           </div>
         </div>    

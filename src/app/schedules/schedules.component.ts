@@ -19,11 +19,7 @@ export class SchedulesComponent implements OnInit {
   blockInstallments: boolean = false;
 
  
-  schedule:any = {
-    recurrenceConfiguration : {},
-  };
-    
-
+  schedule:any = {}; 
   
   constructor() { }
 
@@ -35,6 +31,9 @@ export class SchedulesComponent implements OnInit {
     if(!this.recurrenceEnabled){
       this.recurrenceEnabled = true;
       this.installmentsEnabled = false;
+      this.schedule.recurrenceConfiguration = {
+        times : 400
+      };
     }
     else {
       this.recurrenceEnabled = false;
@@ -54,7 +53,12 @@ export class SchedulesComponent implements OnInit {
   }
 
   resetRecurrence(){
-    this.schedule.recurrenceConfiguration = {};
+    this.schedule.recurrenceConfiguration = {
+      times: 1,
+      frequency:0,
+      endDate: "",
+      daysBeforeDue: ""
+    };
   }
 
 }
