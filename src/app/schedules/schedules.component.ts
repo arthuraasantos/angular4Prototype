@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
+
 
 @Component({
   selector: 'app-schedules',
@@ -20,6 +21,11 @@ export class SchedulesComponent implements OnInit {
 
  
   schedule:any = {}; 
+
+  @ViewChild('collapseRecurrenceLocal') collapseRecurrenceLocal: any;
+  @ViewChild('collapseInstallmentsLocal') collapseInstallmentsLocal: any;
+  @ViewChild('collapseBillingLocal') collapseBillingLocal: any;
+  @ViewChild('collapseInvoiceLocal') collapseInvoiceLocal: any;
   
   constructor() { }
 
@@ -32,13 +38,15 @@ export class SchedulesComponent implements OnInit {
       this.recurrenceEnabled = true;
       this.installmentsEnabled = false;
       this.schedule.recurrenceConfiguration = {
-        times : 400
+        times : ""
       };
     }
     else {
       this.recurrenceEnabled = false;
       this.resetRecurrence();
     }
+
+    this.collapseRecurrenceLocal.nativeElement.click();
   }
 
   enableInstallments(){
@@ -50,6 +58,7 @@ export class SchedulesComponent implements OnInit {
     else{
       this.installmentsEnabled = false;
     }
+    this.collapseInstallmentsLocal.nativeElement.click();
   }
 
   resetRecurrence(){
@@ -59,6 +68,15 @@ export class SchedulesComponent implements OnInit {
       endDate: "",
       daysBeforeDue: ""
     };
+  }
+
+  enableBilling(){
+    this.collapseBillingLocal.nativeElement.click();
+  }
+
+  enableInvoice(){
+    this.collapseInvoiceLocal.nativeElement.click();
+    
   }
 
 }
