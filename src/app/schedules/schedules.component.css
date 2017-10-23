@@ -9,3 +9,7 @@
     border: 2px solid rgb(128, 128, 128);
     box-shadow: black;
 }
+
+.actions{
+    padding-top: 15px;
+}
