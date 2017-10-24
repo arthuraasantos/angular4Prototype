@@ -1,8 +1,6 @@
 .jumbotron{
-    padding: 10px;
+    padding: 30px;
     margin-top: 10px;
+    background-color: #dad5d5;
 }
 
-.form-control{
-    font-size: .7rem !important;
-}

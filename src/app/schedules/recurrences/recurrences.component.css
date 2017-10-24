@@ -30,3 +30,7 @@
     width:  50px;
     display: inline;
 }
+
+.form-control{
+    font-size: 12px;
+}
