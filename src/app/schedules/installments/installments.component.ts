@@ -9,13 +9,11 @@ export class InstallmentsComponent implements OnInit {
   installmentsQuantity: number = 0;
   arrayQuantity: any = [1];
 
-  constructor() {
-
-   }
+  constructor() { }
 
   ngOnInit() {
-    
   }
+
 
   generateInstallmentsItems(){
     console.log("passou");
@@ -25,4 +23,5 @@ export class InstallmentsComponent implements OnInit {
     }
     
   }
+
 }
