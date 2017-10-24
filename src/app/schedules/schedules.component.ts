@@ -26,6 +26,12 @@ export class SchedulesComponent implements OnInit {
   @ViewChild('collapseInstallmentsLocal') collapseInstallmentsLocal: any;
   @ViewChild('collapseBillingLocal') collapseBillingLocal: any;
   @ViewChild('collapseInvoiceLocal') collapseInvoiceLocal: any;
+
+
+  // @ViewChild('recurrenceChevronDown') recurrenceChevronDown: any;
+  // @ViewChild('recurrenceChevronUp') recurrenceChevronUp: any;
+
+
   
   constructor() { }
 
@@ -37,16 +43,19 @@ export class SchedulesComponent implements OnInit {
     if(!this.recurrenceEnabled){
       this.recurrenceEnabled = true;
       this.installmentsEnabled = false;
-      this.schedule.recurrenceConfiguration = {
-        times : ""
-      };
+      this.schedule.recurrenceConfiguration = {};
+      // this.recurrenceChevronDown.nativeElement.classList.add('invisible');
+      // this.recurrenceChevronUp.nativeElement.classList.remove('invisible');
+      this.collapseRecurrenceLocal.nativeElement.click();
     }
     else {
       this.recurrenceEnabled = false;
       this.resetRecurrence();
+      // this.recurrenceChevronDown.nativeElement.classList.remove('invisible');
+      // this.recurrenceChevronUp.nativeElement.classList.add('invisible');
     }
 
-    this.collapseRecurrenceLocal.nativeElement.click();
+    
   }
 
   enableInstallments(){
@@ -54,11 +63,12 @@ export class SchedulesComponent implements OnInit {
       this.recurrenceEnabled = false;
       this.resetRecurrence();
       this.installmentsEnabled = true;
+      this.collapseInstallmentsLocal.nativeElement.click();
     }
     else{
       this.installmentsEnabled = false;
     }
-    this.collapseInstallmentsLocal.nativeElement.click();
+    
   }
 
   resetRecurrence(){
@@ -71,11 +81,26 @@ export class SchedulesComponent implements OnInit {
   }
 
   enableBilling(){
-    this.collapseBillingLocal.nativeElement.click();
+    
+    if(!this.billingEnabled)
+    {
+      this.billingEnabled = true;
+      this.collapseBillingLocal.nativeElement.click();
+    }
+    else 
+      this.billingEnabled = false;
+      
   }
 
   enableInvoice(){
-    this.collapseInvoiceLocal.nativeElement.click();
+    if(!this.invoiceEnabled)
+    {
+      this.invoiceEnabled = true;
+      this.collapseInvoiceLocal.nativeElement.click();
+    }
+    else 
+      this.invoiceEnabled = false;
+      
     
   }
 

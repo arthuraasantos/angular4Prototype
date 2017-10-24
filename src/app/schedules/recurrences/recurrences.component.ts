@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-schedules-recurrences',
@@ -7,17 +7,17 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class RecurrencesComponent implements OnInit {
   endTime: number; 
-
-  recurrence:any = {
-    times:null,
-    frequency: 0,
-    endDate: 0,
-    daysBefore: ""
-  };
   
+    recurrence:any = {
+      times:null,
+      frequency: 0,
+      endDate: 0,
+      daysBefore: ""
+    };
+
   constructor() { }
 
   ngOnInit() {
   }
- 
+
 }
