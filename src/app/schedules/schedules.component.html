@@ -66,7 +66,7 @@
       <div class="card">
         <div class="card-header" role="tab" id="headingOne">
           <div class="mb-0 card-title">
-            <ui-switch id="checkedRecurrence"  color="rgb(35,164,206)" [checked]="recurrenceEnabled" (click)="enableRecurrence();"></ui-switch>
+            <ui-switch id="checkedRecurrence" size="small"  color="rgb(35,164,206)" [checked]="recurrenceEnabled" (click)="enableRecurrence();"></ui-switch>
             <a data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" id="collapseRecurrence" #collapseRecurrenceLocal>
                 Tornar recorrente
             </a>
@@ -88,7 +88,7 @@
       <div class="card">
           <div class="card-header" role="tab" id="headingTwo">
             <div class="mb-0 card-title">
-              <ui-switch id="checkedBilling" color="rgb(35,164,206)" [disabled]="blockInstallments" [checked]="installmentsEnabled" (click)="enableInstallments()" ></ui-switch>              
+              <ui-switch id="checkedBilling" size="small" color="rgb(35,164,206)" [disabled]="blockInstallments" [checked]="installmentsEnabled" (click)="enableInstallments()" ></ui-switch>              
               <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" #collapseInstallmentsLocal>
                 Adicionar parcelas
               </a>
@@ -103,7 +103,7 @@
       <div class="card">
         <div class="card-header" role="tab" id="headingTwo">
           <div class="mb-0 card-title">
-            <ui-switch id="checkedBilling" color="rgb(35,164,206)" [checked]="billingEnabled" (click)="enableBilling();"></ui-switch>
+            <ui-switch id="checkedBilling" size="small" color="rgb(35,164,206)" [checked]="billingEnabled" (click)="enableBilling();"></ui-switch>
             <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"  #collapseBillingLocal>
               Cobrar automaticamente  
             </a>
@@ -118,7 +118,7 @@
       <div class="card">
           <div class="card-header" role="tab" id="headingTwo">
             <div class="mb-0 card-title">
-              <ui-switch id="checkedBilling" color="rgb(35,164,206)" [checked]="invoiceEnabled" (click)="enableInvoice();"></ui-switch>
+              <ui-switch id="checkedBilling" size="small" color="rgb(35,164,206)" [checked]="invoiceEnabled" (click)="enableInvoice();"></ui-switch>
               <a class="collapsed" data-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour" #collapseInvoiceLocal>
                 Enviar nota fiscal
               </a>
