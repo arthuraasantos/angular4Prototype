@@ -30,3 +30,11 @@
 .ml-25{
     margin-left: 25%;
 }    
+
+.cnpj{
+    font-weight: 600;
+}
+
+.sendTo{
+    margin-bottom: 1px;
+}

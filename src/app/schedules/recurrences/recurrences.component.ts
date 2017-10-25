@@ -10,9 +10,10 @@ export class RecurrencesComponent implements OnInit {
   
     recurrence:any = {
       times:null,
-      frequency: 0,
+      frequency: 2,
       endDate: 0,
-      daysBefore: ""
+      daysBefore: "",
+      endTime: "0"
     };
 
   constructor() { }

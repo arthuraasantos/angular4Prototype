@@ -15,3 +15,11 @@
 .bq {
     color: #7f888a;
 }
+
+.cnpj{
+    font-weight: 600;
+}
+
+.sendTo{
+    margin-bottom: 1px;
+}

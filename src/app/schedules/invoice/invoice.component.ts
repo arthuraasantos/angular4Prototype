@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvoiceComponent implements OnInit {
 
+  invoice: any =  {
+      sendWhen: "1"
+  }
   constructor() { }
 
   ngOnInit() {

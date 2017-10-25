@@ -15,18 +15,18 @@
       <select class="form-control select" [(ngModel)]="recurrence.frequency">
           <option value="0">dia(s)</option>
           <option value="1">semana(s)</option>
-          <option value="2">mês(s)</option>
+          <option value="2">mês(es)</option>
           <option value="3">ano(s)</option>
       </select>   
   </div>
   <div class="col-md-4">
-      <input type="radio" [(ngModel)]="endTime" value="0">Indeterminado
+      <input type="radio" [(ngModel)]="recurrence.endTime" value="0">Indeterminado
       <div class="ocurrence">
-          <input type="radio" [(ngModel)]="endTime" name="endTime" value="1">Após
+          <input type="radio" [(ngModel)]="recurrence.endTime" name="endTime" value="1">Após
           <input type="text" class="form-control xOcurrence" [disabled]="endTime != 1"> ocorrências
       </div> 
       <div class="ocurrence">
-          <input type="radio" [(ngModel)]="endTime" name="endTime" value="2">Após
+          <input type="radio" [(ngModel)]="recurrence.endTime" name="endTime" value="2">Após
           <input type="date" class="form-control xOcurrenceDate" [disabled]="endTime != 2"> 
       </div> 
   </div>

@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./installments.component.css']
 })
 export class InstallmentsComponent implements OnInit {
-  installmentsQuantity: number = 0;
+  installmentsQuantity: number = 1;
   arrayQuantity: any = [1];
 
   constructor() { }

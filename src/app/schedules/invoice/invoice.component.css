@@ -6,6 +6,7 @@
     color: #7f888a;
 }
 
+
 .bq2{
     color: #a9b0b1;
 }
@@ -17,10 +18,14 @@
     margin-bottom: 2px;
 }
 
-.sendTo{
-    margin-bottom: 1px;
-}
-
 .form-control{
     font-size: 12px;
+}
+
+.cnpj{
+    font-weight: 600;
+}
+
+.sendTo{
+    margin-bottom: 1px;
 }

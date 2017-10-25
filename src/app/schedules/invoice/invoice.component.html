@@ -2,36 +2,41 @@
   <div class="col-md-6">
       <div class="form-check">
           <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="exampleRadios" value="0" checked>
+            <input class="form-check-input" type="radio" [(ngModel)]="invoice.sendWhen" name="exampleRadios" value="0" checked>
             Imediatamente
           </label>
       </div>
       <div class="form-check">
           <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="exampleRadios" value="0">
+            <input class="form-check-input" type="radio" [(ngModel)]="invoice.sendWhen" name="exampleRadios" value="1">
             Quando o pagamento for confirmado
           </label>
       </div>
       <div class="form-check">
           <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="exampleRadios" value="0">
+            <input class="form-check-input" type="radio" [(ngModel)]="invoice.sendWhen" name="exampleRadios" value="2">
             Quando a cobrança(boleto) for gerada
           </label>
       </div>             
   </div>
   <div class="col-md 6">
     <h6 class="bq">Dados do pagador</h6>
-    <p class="sendTo">Cia de Importação e Exportação das Índias Ltda</p>
-    <p class="sendTo"><strong class="bq">Cpf:</strong> 123.456.789-32</p>
+    <p class="sendTo"><em>Cia de Importação e Exportação das Índias Ltda</em></p>
+    <p class="sendTo"><strong class="bq cnpj">Cnpj:</strong> <em>61.169.915/0001-10</em></p>
     <hr>    
     <h6 class="bq">Enviar para</h6>
-    <p class="text-left sendTo">financeiro@empresa.com.br</p>
-    <p class="text-left sendTo">outroemail@empresa.com.br</p>
+    <p class="text-left sendTo"><em>financeiro@empresa.com.br</em></p>
+    <p class="text-left sendTo">
+      <em>outroemail@empresa.com.br</em>
+      <a>
+          <i class="fa fa-pencil"></i>
+      </a>
+    </p>
     <hr>
     <h6 class="bq">Dados da emissão</h6>
-    <label class="fullLabel"><strong class="bq">Serviço:</strong> 17.19 - Contabilidade</label>
-    <label class="fullLabel"><strong class="bq">Natureza:</strong> Tributação no município </label>
-    <label class="fullLabel"><strong class="bq">Retenção ISS:</strong> Não retém </label>
+    <label class="fullLabel"><strong class="bq">Serviço:</strong> <em>17.19 - Contabilidade</em></label>
+    <label class="fullLabel"><strong class="bq">Natureza:</strong> <em>Tributação no município </em></label>
+    <label class="fullLabel"><strong class="bq">Retenção ISS: </strong><em>Não retém </em></label>
     <hr>
     <p class="text-left">
         <a href="#">Modificar dados da emissão</a>
