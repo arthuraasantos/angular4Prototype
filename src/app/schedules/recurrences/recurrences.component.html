@@ -25,16 +25,16 @@
         </div>
         <div class="ocurrence option">
             <input type="radio" [(ngModel)]="recurrence.endTime" name="endTime" value="1">Após
-            <input type="text" class="form-control xOcurrence" [disabled]="endTime != 1"> ocorrências
+            <input type="text" class="form-control xOcurrence" [disabled]="recurrence.endTime != 1"> ocorrências
         </div>
         <div class="ocurrence option">
             <input type="radio" [(ngModel)]="recurrence.endTime" name="endTime" value="2">Após
-            <input type="date" class="form-control xOcurrenceDate" [disabled]="endTime != 2">
+            <input type="date" class="form-control xOcurrenceDate" [disabled]="recurrence.endTime != 2" [(ngModel)]="recurrence.afterXDays">
         </div>
     </div>
     <div class="col-md-4">
         <div class="monthsBefore">
-            <input type="text" class="form-control"> dias antes do vencimento
+            <input type="text" class="form-control" [(ngModel)]="recurrence.afterXDate"> dias antes do vencimento
         </div>
     </div>
 </div>

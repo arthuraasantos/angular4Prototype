@@ -12,9 +12,12 @@ export class RecurrencesComponent implements OnInit {
       times:null,
       frequency: 2,
       endDate: 0,
+      afterXDays:null,
+      afterXDate:null,
       daysBefore: "",
       endTime: "0"
     };
+
 
   constructor() { }
 
