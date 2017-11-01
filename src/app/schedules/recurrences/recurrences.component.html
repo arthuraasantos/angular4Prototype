@@ -1,38 +1,53 @@
 <div class="row">
-  <div class="col-md-4">
-      <h6 class="bq">Repetir a cada</h6>
-  </div>
-  <div class="col-md-4">
-      <h6 class="bq">Término</h6>
-  </div>   
-  <div class="col-md-4">
-      <h6 class="bq">Criar com</h6>
-  </div>        
+    <div class="col-md-4">
+        <h6 class="bq">Repetir a cada</h6>
+    </div>
+    <div class="col-md-4">
+        <h6 class="bq">Término</h6>
+    </div>
+    <div class="col-md-4">
+        <h6 class="bq">Criar com</h6>
+    </div>
 </div>
 <div class="row">
-  <div class="col-md-4 frequency">
-      <input type="text" [(ngModel)]="recurrence.times" class="form-control repeat">
-      <select class="form-control select" [(ngModel)]="recurrence.frequency">
-          <option value="0">dia(s)</option>
-          <option value="1">semana(s)</option>
-          <option value="2">mês(es)</option>
-          <option value="3">ano(s)</option>
-      </select>   
-  </div>
-  <div class="col-md-4">
-      <input type="radio" [(ngModel)]="recurrence.endTime" value="0">Indeterminado
-      <div class="ocurrence">
-          <input type="radio" [(ngModel)]="recurrence.endTime" name="endTime" value="1">Após
-          <input type="text" class="form-control xOcurrence" [disabled]="endTime != 1"> ocorrências
-      </div> 
-      <div class="ocurrence">
-          <input type="radio" [(ngModel)]="recurrence.endTime" name="endTime" value="2">Após
-          <input type="date" class="form-control xOcurrenceDate" [disabled]="endTime != 2"> 
-      </div> 
-  </div>
-  <div class="col-md-4">
-      <div class="monthsBefore">
-          <input type="text" class="form-control" > dias antes do vencimento
-      </div>
-  </div>
+    <div class="col-md-4 frequency">
+        <input type="text" [(ngModel)]="recurrence.times" class="form-control repeat">
+        <select class="form-control select ht30" [(ngModel)]="recurrence.frequency">
+            <option value="0">dia(s)</option>
+            <option value="1">semana(s)</option>
+            <option value="2">mês(es)</option>
+            <option value="3">ano(s)</option>
+        </select>
+    </div>
+    <div class="col-md-4">
+        <div class="ocurrence option">
+                <input type="radio" [(ngModel)]="recurrence.endTime" value="0">Indeterminado
+        </div>
+        <div class="ocurrence option">
+            <input type="radio" [(ngModel)]="recurrence.endTime" name="endTime" value="1">Após
+            <input type="text" class="form-control xOcurrence" [disabled]="endTime != 1"> ocorrências
+        </div>
+        <div class="ocurrence option">
+            <input type="radio" [(ngModel)]="recurrence.endTime" name="endTime" value="2">Após
+            <input type="date" class="form-control xOcurrenceDate" [disabled]="endTime != 2">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="monthsBefore">
+            <input type="text" class="form-control"> dias antes do vencimento
+        </div>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="alert alert-warning" role="alert">
+           
+        <p class="description">
+            <i class="fa fa-exclamation-triangle fa-lg"></i>
+            Ao tornar um agendamento recorrente,o Nibo criará automaticamente o
+            próximo lançamento após o vencimento do atual. Para consultar ou 
+            excluir suas transações recorrentes.<br> 
+            Acesse: <a href="/Recurrence/Index">Empresa > Transações recorrentes</a>
+        </p>
+    </div>
 </div>

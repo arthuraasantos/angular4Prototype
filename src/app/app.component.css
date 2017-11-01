@@ -1,6 +1,28 @@
 .jumbotron{
     padding: 30px;
     margin-top: 10px;
-    background-color: #dad5d5;
+    background-color: rgb(255, 255, 255);
+    width: 740px; 
+    height: auto; 
+    top: 243px; 
+    left: 570px; 
+    display: block;
 }
 
+.container{
+    padding: 30px;
+    background-color: rgb(119, 119, 119);
+    cursor: pointer;
+    display: block;
+}
+
+.body{
+    font-size:12px;
+    font-family: "Open Sans", sans-serif;
+}
+
+
+h6{
+    font-size: 12px;
+    font-weight: 600;
+}

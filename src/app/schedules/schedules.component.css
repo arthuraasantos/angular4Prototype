@@ -5,13 +5,10 @@
 .jumbotron{
     padding: 30px;
     margin-top: 30px;
-    background-color: #dce2e8;
+    /* background-color: #dce2e8; */
+
     border: 2px solid rgb(128, 128, 128);
     box-shadow: black;
-}
-
-.actions{
-    padding-top: 15px;
 }
 
 .inline{
@@ -19,22 +16,48 @@
 }
 
 .card-title{
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 12px;
+    height: 25px;
+}
+
+.card{
+    font-size: 12px;
+    background-color: #f8f8f8;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.card > .card-header{
+    bottom: 20px;
 }
 
 .form-control{
     font-size: 12px;
+
 }
 
 .ml-25{
     margin-left: 25%;
 }    
 
-.cnpj{
-    font-weight: 600;
+
+.h1, h1{
+    font-size: 20px;
+    color: rgb(39, 41, 43);
 }
 
-.sendTo{
-    margin-bottom: 1px;
+.actions{
+    padding-top: 15px;
+    bottom: 2px;
 }
+
+.btn, .actions{
+    font-size: 12px;
+}
+
+.fa-star{
+   color:rgb(202, 212, 214);
+}
+
+
+

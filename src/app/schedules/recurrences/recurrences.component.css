@@ -1,25 +1,41 @@
+h6{
+    font-size: 12px;
+    font-weight: 600;
+}
+
 .frequency > .form-control-repeat{
-    width: 50px;
+    width: 20px;
 }
 
 .frequency > .form-control{
-    width: 70px;    
+    width: 40px;    
     display: inline;
 }
 
 .frequency > .select{
-    width: 120px;
+    width: 100px;
+}
+
+.frequency > .ht30{
+    height: 30px;
 }
 
 .ocurrence > .form-control{
     display: inline;
+    
+}
+
+
+
+.option{
+    padding-bottom: 10px;
 }
 .xOcurrence{
     width: 60px;
 }
 
 .xOcurrenceDate{
-    width: 200px;
+    width: 140px;
 }
 
 .bq {
@@ -27,10 +43,20 @@
 }
 
 .monthsBefore > .form-control{
-    width:  50px;
+    width: 50px;
     display: inline;
 }
 
 .form-control{
     font-size: 12px;
+    padding: .4rem .75rem;
+}
+
+.alert-warning{
+    padding-bottom: 0px;
+}
+
+.alert{
+    margin-left: 15px;
+    margin-right: 15px;
 }
