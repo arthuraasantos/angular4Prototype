@@ -5,3 +5,23 @@
 .form-control{
     font-size: 12px;
 }
+
+.quantity{
+    width: 8%;
+}
+
+h6{
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.bq {
+    color: #7f888a;
+}
+
+select {
+    padding: 4px 5px;
+    height: 30px !important;
+    border: 1px solid #cad4d6;
+    box-sizing: border-box;
+}

@@ -5,3 +5,9 @@
 .form-control{
     font-size: 12px;
 }
+
+.date{
+    width: 140px !important;
+    position: relative;
+    z-index: 1;
+}

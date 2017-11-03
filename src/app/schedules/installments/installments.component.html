@@ -1,7 +1,7 @@
 <div class="row title">
   <div class="col-sm-12">
-    <h6>Parcelas adicionais:</h6>
-    <select [(ngModel)]="installmentsQuantity" (ngModelChange)="generateInstallmentsItems()">
+    <h6 class="bq">Parcelas adicionais:</h6>
+    <select [(ngModel)]="installmentsQuantity" class="form-control quantity span4" (ngModelChange)="generateInstallmentsItems()">
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -18,6 +18,20 @@
   </div>
 </div>    
   
+<div class="row">
+  <div class="col-md-2">
+      <label>Valor</label>
+  </div>
+  <div class="col-md-3">
+      <label>Vencimento</label>
+  </div>
+  <div class="col-sm-5">
+      <label>Descrição</label>
+  </div>
+  <div class="col-sm-2">
+      <label>Referência</label>
+  </div>  
+</div>
 <div class="row">
   <div class="col-sm-12" *ngFor="let item of arrayQuantity;" >
       <app-schedules-installments-items></app-schedules-installments-items>
