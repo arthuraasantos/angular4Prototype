@@ -62,7 +62,7 @@
         <div class="card-header" role="tab" id="headingOne">
           <div class="mb-0 card-title">
             <ui-switch id="checkedRecurrence" size="small" color="rgb(35,164,206)" [checked]="recurrenceEnabled" (click)="enableRecurrence();"></ui-switch>
-            <label>Tornar recorrente</label>
+            <label class="lb-center">Tornar recorrente</label>
             <a data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" id="collapseRecurrence" (click)="openRecurrence()" style="display:hidden;"
               #collapseRecurrenceLocal>
             </a>
@@ -84,7 +84,7 @@
               [disabled]="blockInstallments" 
               [checked]="installmentsEnabled" 
               (click)="enableInstallments()"></ui-switch>
-            <label>Adicionar parcelas</label>
+            <label class="lb-center">Adicionar parcelas</label>
             <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" 
               id="collapseInstallments" 
               aria-controls="collapseTwo" 
@@ -105,7 +105,7 @@
         <div class="card-header" role="tab" id="headingTwo">
           <div class="mb-0 card-title">
             <ui-switch id="checkedBilling" size="small" color="rgb(35,164,206)" [checked]="billingEnabled" style="display:hidden;" (click)="enableBilling()"></ui-switch>
-            <label>Cobrar automaticamente </label>
+            <label class="lb-center">Cobrar automaticamente </label>
             <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" 
               id="collapseBilling" 
               aria-controls="collapseThree" 
@@ -127,7 +127,7 @@
         <div class="card-header" role="tab" id="headingTwo">
           <div class="mb-0 card-title">
             <ui-switch id="checkedBilling" size="small" color="rgb(35,164,206)" [checked]="invoiceEnabled" style="display:hidden;" (click)="enableInvoice();"></ui-switch>
-            <label>Enviar nota fiscal</label>
+            <label class="lb-center">Enviar nota fiscal</label>
             <a class="collapsed" data-toggle="collapse" href="#collapseFour" aria-expanded="false" 
             aria-controls="collapseFour"
             id="collapseInvoice"
@@ -152,12 +152,12 @@
     <div class="col-sm-4">
       <div class="form-check">
         <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" value=""> Continuar agendando
+          <input class="form-check-input actions-options" type="checkbox" value=""> Continuar agendando
         </label>
       </div>
     </div>
     <div class="col-sm-1">
-      <a href="#">Cancelar</a>
+      <a href="#" class="actions-options">Cancelar</a>
     </div>
     <div class="col-sm-3">
       <button class="btn btn-primary pull-right">

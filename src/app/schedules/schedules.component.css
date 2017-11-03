@@ -27,6 +27,7 @@
 
 .card > .card-header{
     bottom: 20px;
+    height: 45px;
 }
 
 .form-control{
@@ -47,6 +48,14 @@
 .actions{
     padding-top: 15px;
     bottom: 2px;
+    margin-top: 67px;
+    
+}
+
+.actions-options{
+    position: inherit;
+    left: 31%;
+    top: 25%;
 }
 
 .btn, .actions{
@@ -58,4 +67,6 @@
 }
 
 
-
+.lb-center{
+    vertical-align: middle;
+}
