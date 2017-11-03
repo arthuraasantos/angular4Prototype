@@ -8,27 +8,27 @@
       </div>
       <div class="form-check">
           <label class="form-check-label">
+            <input class="form-check-input" type="radio" [(ngModel)]="invoice.sendWhen" name="exampleRadios" value="2">
+            Quando a cobrança(boleto) for gerada
+          </label>
+      </div>      
+      <div class="form-check">
+          <label class="form-check-label">
             <input class="form-check-input" type="radio" [(ngModel)]="invoice.sendWhen" name="exampleRadios" value="1">
             Quando o pagamento for confirmado
           </label>
       </div>
-      <div class="form-check">
-          <label class="form-check-label">
-            <input class="form-check-input" type="radio" [(ngModel)]="invoice.sendWhen" name="exampleRadios" value="2">
-            Quando a cobrança(boleto) for gerada
-          </label>
-      </div>             
   </div>
   <div class="col-md 6">
     <h6 class="bq">Dados do pagador</h6>
     <p class="sendTo"><em>Cia de Importação e Exportação das Índias Ltda</em></p>
-    <p class="sendTo"><strong class="bq cnpj">Cnpj:</strong> <em>61.169.915/0001-10</em></p>
+    <p class="sendTo"><strong class="bq">Cnpj:</strong> <em>61.169.915/0001-10</em></p>
     <hr>    
     <h6 class="bq">Enviar para</h6>
     <p class="text-left sendTo"><em>financeiro@empresa.com.br</em></p>
     <p class="text-left sendTo">
       <em>outroemail@empresa.com.br</em>
-      <a>
+      <a href="#">
           <i class="fa fa-pencil"></i>
       </a>
     </p>

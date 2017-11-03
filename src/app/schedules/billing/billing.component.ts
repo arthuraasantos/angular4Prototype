@@ -8,12 +8,18 @@ import { Component, OnInit } from '@angular/core';
 export class BillingComponent implements OnInit {
 
   billing: any = {
-    when: "0",
-    dayWhen: ""
+    when: 0,
+    dayWhen: null
   };
+
+  teste: number = 0;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  clearDayWhen(){
+    this.billing.dayWhen = null;
   }
 
 }

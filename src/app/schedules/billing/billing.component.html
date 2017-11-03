@@ -1,22 +1,19 @@
 <div class="row padding">
-    
-
-
   <div class="col-md-6">
       <div class="form-check">
           <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="exampleRadios" [(ngModel)]="billing.when" value="0">
+            <input class="form-check-input" type="radio" [(ngModel)]="billing.when" name="billingWhen" value="0" (click)="clearDayWhen()" >
             Enviar imediatamente
           </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="exampleRadios" [(ngModel)]="billing.when"  value="1">
-            <label>Enviar
-                <input type="text" class="form-control" [disabled]="billing.dayWhen == 0"> dias antes o vencimento
-            </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input class="form-check-input" type="radio" [(ngModel)]="billing.when" name="billingWhen" value="1" >
+          <label>Enviar
+              <input type="text" class="form-control" [(ngModel)]="billing.dayWhen"  [disabled]="billing.when == 0"> dias antes o vencimento
           </label>
-        </div>
+        </label>
+      </div>
   </div>
   <div class="col-md 6">
     <h6 class="bq">Dados do pagador</h6>
@@ -27,7 +24,7 @@
     <p class="text-left sendTo"><em>financeiro@empresa.com.br</em></p>
     <p class="text-left sendTo">
       <em>outroemail@empresa.com.br</em>
-      <a>
+      <a href="#">
           <i class="fa fa-pencil"></i>
       </a>
     </p>

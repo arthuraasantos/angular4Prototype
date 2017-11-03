@@ -1,6 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 
-
 @Component({
   selector: 'app-schedules',
   templateUrl: './schedules.component.html',
@@ -8,29 +7,33 @@ import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/cor
 })
 export class SchedulesComponent implements OnInit {
 
+  schedule:any = {}; 
+
   recurrenceEnabled: boolean = false;
+  recurrenceOpened: boolean = false;
   recurrenceRepeatTimes: any = null;
   recurrenceRepeatFrequency: any = 0;
   recurrenceEndDate: number = 0;
 
   installmentsEnabled: boolean = false;
+  installmentsOpened: boolean = false;
+
   billingEnabled: boolean = false;
+  billingOpened: boolean = false;
+
   invoiceEnabled: boolean = false;
+  invoiceOpened: boolean = false;
+
   blockRecurrence: boolean = false;
   blockInstallments: boolean = false;
 
  
-  schedule:any = {}; 
+  
 
   @ViewChild('collapseRecurrenceLocal') collapseRecurrenceLocal: any;
   @ViewChild('collapseInstallmentsLocal') collapseInstallmentsLocal: any;
   @ViewChild('collapseBillingLocal') collapseBillingLocal: any;
   @ViewChild('collapseInvoiceLocal') collapseInvoiceLocal: any;
-
-
-  // @ViewChild('recurrenceChevronDown') recurrenceChevronDown: any;
-  // @ViewChild('recurrenceChevronUp') recurrenceChevronUp: any;
-
 
   
   constructor() { }
@@ -44,16 +47,15 @@ export class SchedulesComponent implements OnInit {
       this.recurrenceEnabled = true;
       this.installmentsEnabled = false;
       this.schedule.recurrenceConfiguration = {};
-      // this.recurrenceChevronDown.nativeElement.classList.add('invisible');
-      // this.recurrenceChevronUp.nativeElement.classList.remove('invisible');
-      this.collapseRecurrenceLocal.nativeElement.click();
+      this.recurrenceOpened = true;
     }
     else {
       this.recurrenceEnabled = false;
+      this.recurrenceOpened = false;
       this.resetRecurrence();
-      // this.recurrenceChevronDown.nativeElement.classList.remove('invisible');
-      // this.recurrenceChevronUp.nativeElement.classList.add('invisible');
     }
+
+    this.collapseRecurrenceLocal.nativeElement.click();
 
     
   }
@@ -63,11 +65,38 @@ export class SchedulesComponent implements OnInit {
       this.recurrenceEnabled = false;
       this.resetRecurrence();
       this.installmentsEnabled = true;
-      this.collapseInstallmentsLocal.nativeElement.click();
+      
     }
     else{
       this.installmentsEnabled = false;
     }
+
+    this.collapseInstallmentsLocal.nativeElement.click();
+  }
+
+  enableBilling(){
+    
+    if(!this.billingEnabled)
+    {
+      this.billingEnabled = true;
+      
+    }
+    else 
+      this.billingEnabled = false;
+      
+    this.collapseBillingLocal.nativeElement.click();      
+  }
+
+  enableInvoice(){
+    if(!this.invoiceEnabled)
+    {
+      this.invoiceEnabled = true;
+      
+    }
+    else 
+      this.invoiceEnabled = false;
+    
+    this.collapseInvoiceLocal.nativeElement.click();
     
   }
 
@@ -80,28 +109,22 @@ export class SchedulesComponent implements OnInit {
     };
   }
 
-  enableBilling(){
-    
-    if(!this.billingEnabled)
-    {
-      this.billingEnabled = true;
-      this.collapseBillingLocal.nativeElement.click();
-    }
-    else 
-      this.billingEnabled = false;
-      
+
+
+  openRecurrence(){
+    this.recurrenceOpened = !this.recurrenceOpened;
   }
 
-  enableInvoice(){
-    if(!this.invoiceEnabled)
-    {
-      this.invoiceEnabled = true;
-      this.collapseInvoiceLocal.nativeElement.click();
-    }
-    else 
-      this.invoiceEnabled = false;
-      
-    
+  openInstallments(){
+    this.installmentsOpened = !this.installmentsOpened;
   }
+
+  openBilling(){
+    this.billingOpened = !this.billingOpened;
+  }
+
+  openInvoice(){
+    this.invoiceOpened = !this.invoiceOpened;
+  }  
 
 }
