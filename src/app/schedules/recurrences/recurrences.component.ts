@@ -15,7 +15,7 @@ export class RecurrencesComponent implements OnInit {
       afterXDays:null,
       afterXDate:null,
       daysBefore: "",
-      endTime: "0"
+      endTime: "1"
     };
 
 

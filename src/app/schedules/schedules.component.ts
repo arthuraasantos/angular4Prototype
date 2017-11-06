@@ -47,17 +47,21 @@ export class SchedulesComponent implements OnInit {
       this.recurrenceEnabled = true;
       this.installmentsEnabled = false;
       this.schedule.recurrenceConfiguration = {};
-      this.recurrenceOpened = true;
+      
+      this.collapseRecurrenceLocal.nativeElement.click();
+      
+      this.closeToggles(0);
     }
     else {
+
       this.recurrenceEnabled = false;
-      this.recurrenceOpened = false;
       this.resetRecurrence();
+
+      if(this.recurrenceOpened){
+        this.collapseRecurrenceLocal.nativeElement.click();
+      }
+        
     }
-
-    this.collapseRecurrenceLocal.nativeElement.click();
-
-    
   }
 
   enableInstallments(){
@@ -65,13 +69,16 @@ export class SchedulesComponent implements OnInit {
       this.recurrenceEnabled = false;
       this.resetRecurrence();
       this.installmentsEnabled = true;
-      
+      this.collapseInstallmentsLocal.nativeElement.click();
+
+      this.closeToggles(1);
     }
     else{
       this.installmentsEnabled = false;
-    }
 
-    this.collapseInstallmentsLocal.nativeElement.click();
+      if(this.installmentsOpened)
+        this.collapseInstallmentsLocal.nativeElement.click();
+    }
   }
 
   enableBilling(){
@@ -79,24 +86,33 @@ export class SchedulesComponent implements OnInit {
     if(!this.billingEnabled)
     {
       this.billingEnabled = true;
+      this.collapseBillingLocal.nativeElement.click();    
       
+      this.closeToggles(2);
     }
-    else 
+    else {
       this.billingEnabled = false;
-      
-    this.collapseBillingLocal.nativeElement.click();      
+
+      if(this.billingOpened)  
+        this.collapseBillingLocal.nativeElement.click();      
+    }
+    
   }
 
   enableInvoice(){
     if(!this.invoiceEnabled)
     {
       this.invoiceEnabled = true;
-      
+      this.collapseInvoiceLocal.nativeElement.click();
+
+      this.closeToggles(3);
     }
-    else 
+    else {
       this.invoiceEnabled = false;
-    
-    this.collapseInvoiceLocal.nativeElement.click();
+      
+      if(this.invoiceOpened)  
+        this.collapseInvoiceLocal.nativeElement.click();
+    }
     
   }
 
@@ -110,21 +126,51 @@ export class SchedulesComponent implements OnInit {
   }
 
 
-
   openRecurrence(){
     this.recurrenceOpened = !this.recurrenceOpened;
+    this.closeToggles(0);
   }
 
   openInstallments(){
     this.installmentsOpened = !this.installmentsOpened;
+    this.closeToggles(1);
   }
 
   openBilling(){
     this.billingOpened = !this.billingOpened;
+    this.closeToggles(2);
   }
 
   openInvoice(){
     this.invoiceOpened = !this.invoiceOpened;
-  }  
+    this.closeToggles(3);
+  }
+  
+  closeToggles(value: number){
+  switch(value)
+  {
+    case 0: // Recurrence
+            this.installmentsOpened = false;
+            this.billingOpened = false;
+            this.invoiceOpened = false;
+            break;
+    case 1: // Installments
+            this.recurrenceOpened = false;
+            this.billingOpened = false;
+            this.invoiceOpened = false;
+            break;            
+    case 2: // Billing
+            this.recurrenceOpened = false;
+            this.installmentsOpened = false;
+            this.invoiceOpened = false;
+            break;          
+    case 3: // Invoice
+            this.recurrenceOpened = false;
+            this.installmentsOpened = false;
+            this.billingOpened = false;
+            break;                        
+  }
+    
+  }
 
 }

@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class BillingComponent implements OnInit {
 
   billing: any = {
-    when: 0,
+    when: "1",
     dayWhen: null
   };
 

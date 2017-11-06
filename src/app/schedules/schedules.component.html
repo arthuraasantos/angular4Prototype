@@ -5,12 +5,12 @@
   <hr>
   <div class="row">
     <div class="col-sm-9">
-      <label class="">Vencimento</label>
+      <label>Vencimento</label>
       <input type="date" class="form-control date">
     </div>
     <div class="col-sm-3">
-      <label class="text-left ml-25">Previsto para</label>
-      <input type="date" class="form-control date pull-right">
+      <label>Previsto para</label>
+      <input type="date" class="form-control date">
     </div>
   </div>
   <div class="row">
@@ -61,13 +61,15 @@
       <div class="card">
         <div class="card-header" role="tab" id="headingOne">
           <div class="mb-0 card-title">
-            <ui-switch id="checkedRecurrence" size="small" color="rgb(35,164,206)" [checked]="recurrenceEnabled" (click)="enableRecurrence();"></ui-switch>
-            <label class="lb-center">Tornar recorrente</label>
+            <ui-switch id="checkedRecurrence" size="small" color="rgb(35,164,206)" [checked]="recurrenceEnabled" (click)="enableRecurrence()"></ui-switch>
+            <label class="lb-center lb-link" (click)="enableRecurrence()">
+                Tornar recorrente
+            </label>
             <a data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" id="collapseRecurrence" (click)="openRecurrence()" style="display:hidden;"
               #collapseRecurrenceLocal>
             </a>
             <a onclick="document.getElementById('collapseRecurrence').click();" class="pull-right">
-              <i class="fa" [ngClass]="{'fa-chevron-down': !recurrenceOpened, 'fa-chevron-up': recurrenceOpened }" ></i> 
+              <i class="fa" [ngClass]="{'fa-chevron-down': (recurrenceEnabled && !recurrenceOpened), 'fa-chevron-up': (recurrenceEnabled && recurrenceOpened) }" ></i> 
             </a>
           </div>
         </div>
@@ -84,14 +86,16 @@
               [disabled]="blockInstallments" 
               [checked]="installmentsEnabled" 
               (click)="enableInstallments()"></ui-switch>
-            <label class="lb-center">Adicionar parcelas</label>
+            <label class="lb-center lb-link" (click)="enableInstallments()">
+                Adicionar parcelas
+            </label>
             <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" 
               id="collapseInstallments" 
               aria-controls="collapseTwo" 
               (click)="openInstallments()" #collapseInstallmentsLocal>
             </a>
             <a onclick="document.getElementById('collapseInstallments').click();" class="pull-right">
-                <i class="fa" [ngClass]="{'fa-chevron-down': !installmentsOpened, 'fa-chevron-up': installmentsOpened }" ></i> 
+                <i class="fa" [ngClass]="{'fa-chevron-down': (installmentsEnabled && !installmentsOpened), 'fa-chevron-up': (installmentsEnabled && installmentsOpened) }" ></i> 
             </a>
           </div>
         </div>
@@ -105,7 +109,9 @@
         <div class="card-header" role="tab" id="headingTwo">
           <div class="mb-0 card-title">
             <ui-switch id="checkedBilling" size="small" color="rgb(35,164,206)" [checked]="billingEnabled" style="display:hidden;" (click)="enableBilling()"></ui-switch>
-            <label class="lb-center">Cobrar automaticamente </label>
+            <label class="lb-center lb-link" (click)="enableBilling()">
+                Cobrar automaticamente 
+            </label>
             <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" 
               id="collapseBilling" 
               aria-controls="collapseThree" 
@@ -113,7 +119,7 @@
               #collapseBillingLocal>
             </a>
             <a onclick="document.getElementById('collapseBilling').click();" class="pull-right">
-                <i class="fa" [ngClass]="{'fa-chevron-down': !billingOpened, 'fa-chevron-up': billingOpened }" ></i> 
+                <i class="fa" [ngClass]="{'fa-chevron-down': (billingEnabled && !billingOpened), 'fa-chevron-up': (billingEnabled && billingOpened) }" ></i> 
             </a>
           </div>
         </div>
@@ -126,8 +132,11 @@
       <div class="card">
         <div class="card-header" role="tab" id="headingTwo">
           <div class="mb-0 card-title">
-            <ui-switch id="checkedBilling" size="small" color="rgb(35,164,206)" [checked]="invoiceEnabled" style="display:hidden;" (click)="enableInvoice();"></ui-switch>
-            <label class="lb-center">Enviar nota fiscal</label>
+            <ui-switch id="checkedBilling" size="small" color="rgb(35,164,206)" [checked]="invoiceEnabled" style="display:hidden;" (click)="enableInvoice();">
+            </ui-switch>
+            <label class="lb-center lb-link" (click)="enableInvoice()">
+                Enviar nota fiscal
+            </label>
             <a class="collapsed" data-toggle="collapse" href="#collapseFour" aria-expanded="false" 
             aria-controls="collapseFour"
             id="collapseInvoice"
@@ -135,7 +144,7 @@
               #collapseInvoiceLocal>
             </a>
             <a onclick="document.getElementById('collapseInvoice').click();" class="pull-right">
-                <i class="fa" [ngClass]="{'fa-chevron-down': !invoiceOpened, 'fa-chevron-up': invoiceOpened }" ></i> 
+                <i class="fa" [ngClass]="{'fa-chevron-down': (invoiceEnabled && !invoiceOpened), 'fa-chevron-up': (invoiceEnabled && invoiceOpened) }" ></i> 
             </a>
           </div>
         </div>
@@ -148,11 +157,11 @@
     </div>
   </div>
   <div class="row actions">
-    <div class="col-sm-4"></div>
-    <div class="col-sm-4">
-      <div class="form-check">
+    <div class="col-sm-5"></div>
+    <div class="col-sm-3">
+      <div class="form-check" style="bottom: -4px;">
         <label class="form-check-label">
-          <input class="form-check-input actions-options" type="checkbox" value=""> Continuar agendando
+          <input class="form-check-input actions-options" type="checkbox"> Continuar agendando
         </label>
       </div>
     </div>

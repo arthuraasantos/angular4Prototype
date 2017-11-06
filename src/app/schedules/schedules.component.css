@@ -1,5 +1,5 @@
 .date{
-    width: 180px;
+    width: 145px;
 }
 
 .jumbotron{
@@ -68,4 +68,9 @@
 
 .lb-center{
     vertical-align: middle;
+}
+
+.lb-link{
+    text-decoration: none;
+    cursor: pointer;
 }
