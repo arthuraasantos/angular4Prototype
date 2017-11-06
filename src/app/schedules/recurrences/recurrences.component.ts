@@ -9,13 +9,13 @@ export class RecurrencesComponent implements OnInit {
   endTime: number; 
   
     recurrence:any = {
-      times:null,
+      times:1,
       frequency: 2,
       endDate: 0,
       afterXDays:null,
       afterXDate:null,
-      daysBefore: "",
-      endTime: "1"
+      monthsBefore: "3",
+      endTime: "0"
     };
 
 

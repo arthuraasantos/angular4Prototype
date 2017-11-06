@@ -1,4 +1,4 @@
-  <h1>
+<h1>
     <i class="fa fa-star"></i>
     Agendar novo recebimento
   </h1>
@@ -28,7 +28,7 @@
     </div>
     <div class="col-sm-4">
       <label>Valor</label>
-      <input type="text" class="form-control" placeholder="0,00" [(ngModel)]="totalValue">
+      <input type="text" class="form-control" placeholder="0,00">
     </div>
     <div class="col-sm-4">
       <label>Categoria</label>
@@ -101,7 +101,7 @@
         </div>
         <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
           <div class="card-body">
-            <app-schedules-installments [scheduleValue]="totalValue"></app-schedules-installments>
+            <app-schedules-installments></app-schedules-installments>
           </div>
         </div>
       </div>

@@ -1,23 +1,10 @@
 <div class="row title">
-  <div class="col-sm-12">
-    <h6 class="bq">Parcelas adicionais:</h6>
-    <select [(ngModel)]="installmentsQuantity" class="form-control quantity span4" (ngModelChange)="generateInstallmentsItems()">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-      <option value="11">11</option>
-      <option value="12">12</option>
-    </select>
+  <div class="col-sm-3">
+    <h6 class="bq">Número de parcelas:</h6>
+    <input type="text" class="form-control" [(ngModel)]="installmentsQuantity" (ngModelChange)="gerarParcelasComValor(scheduleValue)" style="width:50px;">
   </div>
-</div>    
   
+</div>    
 <div class="row">
   <div class="col-md-2">
       <label>Valor</label>
@@ -37,4 +24,12 @@
       <app-schedules-installments-items></app-schedules-installments-items>
       <span></span>
   </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <label class="alert alert-warning">
+          <i class="fa fa-exclamation-circle"></i>
+          Este agendamento é a primeira das parcelas
+        </label>
+      </div>
 </div>

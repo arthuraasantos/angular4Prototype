@@ -1,0 +1,76 @@
+.date{
+    width: 145px;
+}
+
+.jumbotron{
+    padding: 30px;
+    margin-top: 30px;
+    border: 2px solid rgb(128, 128, 128);
+    box-shadow: black;
+}
+
+.inline{
+    display:inline;
+}
+
+.card-title{
+    font-size: 12px;
+    height: 25px;
+}
+
+.card{
+    font-size: 12px;
+    background-color: #f8f8f8;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.card > .card-header{
+    bottom: 20px;
+    height: 45px;
+}
+
+.form-control{
+    font-size: 12px;
+
+}
+
+.ml-25{
+    margin-left: 25%;
+}    
+
+
+.h1, h1{
+    font-size: 20px;
+    color: rgb(39, 41, 43);
+}
+
+.actions{
+    bottom: 15px;
+    margin-top: 3%;
+    
+}
+
+.actions-options{
+    position: inherit;
+    left: 31%;
+    top: 25%;
+}
+
+.btn, .actions{
+    font-size: 12px;
+}
+
+.fa-star{
+   color:rgb(202, 212, 214);
+}
+
+
+.lb-center{
+    vertical-align: middle;
+}
+
+.lb-link{
+    text-decoration: none;
+    cursor: pointer;
+}

@@ -16,10 +16,12 @@ import { ItemsComponent } from './schedules/installments/items/items.component';
 import { BillingComponent } from './schedules/billing/billing.component';
 import { InvoiceComponent } from './schedules/invoice/invoice.component';
 import { HomeComponent } from './home/home.component';
+import { RecurrenceEditionComponent } from './recurrence-edition/recurrence-edition.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'schedules/new', component: SchedulesComponent },
+  { path: 'recurrence/new', component: SchedulesComponent },
+  { path: 'recurrence/edit', component: RecurrenceEditionComponent },
   { path: '',
     redirectTo: '/home',
     pathMatch: 'full'
@@ -37,7 +39,8 @@ const appRoutes: Routes = [
     ItemsComponent,
     BillingComponent,
     InvoiceComponent,
-    HomeComponent
+    HomeComponent,
+    RecurrenceEditionComponent,
   ],
   imports: [
     BrowserModule,
