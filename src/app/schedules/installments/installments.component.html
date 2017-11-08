@@ -1,29 +1,33 @@
 <div class="row title">
   <div class="col-sm-3">
     <h6 class="bq">Número de parcelas:</h6>
-    <input type="text" class="form-control" [(ngModel)]="installmentsQuantity" (ngModelChange)="gerarParcelasComValor(scheduleValue)" style="width:50px;">
+    <span (click)='onClick()'>Click me please!</span>
+    <input type="text" class="form-control" [(ngModel)]="installmentsQuantity" (ngModelChange)="generateInstallmentsItems(scheduleValue)" style="width:50px;">
   </div>
-  
 </div>    
 <div class="row">
-  <div class="col-md-2">
-      <label>Valor</label>
-  </div>
-  <div class="col-md-3">
-      <label>Vencimento</label>
-  </div>
-  <div class="col-sm-5">
-      <label>Descrição</label>
-  </div>
-  <div class="col-sm-2">
-      <label>Referência</label>
-  </div>  
-</div>
-<div class="row">
-  <div class="col-sm-12" *ngFor="let item of arrayQuantity;" >
-      <app-schedules-installments-items></app-schedules-installments-items>
-      <span></span>
-  </div>
+
+<table class="table table-responsive" *ngIf="installments.length > 0">
+  <thead>
+    <tr>
+      <th>Valor</th>
+      <th>Vencimento</th>
+      <th>Descrição</th>
+      <th>Referência</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let item of installments">
+        <td>
+            <input type="text" class="form-control" [(ngModel)]="item.value" >
+        </td>
+        <td><input type="date" class="form-control date" [(ngModel)]="item.date" id="testeArthur" ></td>
+        <td><input type="text" class="form-control" [(ngModel)]="item.description"></td>
+        <td><input type="text" class="form-control" [(ngModel)]="item.reference" ></td>
+          
+      </tr>
+  </tbody>
+  </table>
 </div>
 <div class="row">
     <div class="col-sm-12">
@@ -31,5 +35,5 @@
           <i class="fa fa-exclamation-circle"></i>
           Este agendamento é a primeira das parcelas
         </label>
-      </div>
+    </div>
 </div>

@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Observable } from "rxjs/Observable";
+import { Component, Output, Input, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-schedules-installments',
@@ -10,49 +9,62 @@ export class InstallmentsComponent implements OnInit {
   installmentsQuantity: number = 1;
   arrayQuantity: any = [1];
   installments: any = [];
-  observableScheduleValue: Observable<Array<number>>;
-   data: Observable<Array<number>>;
 
   @Input() scheduleValue: number;  
   @Input() scheduleDate: any = "2017-11-06";  
   @Input() scheduleDescription: string = "Teste";  
-  @Input() scheduleReference: string = "20171106";  
+  @Input() scheduleReference: string = "20171106";
+
+  @Output() notify = new EventEmitter();
+  
+  onClick() {
+    this.notify.emit('Click from nested component');
+  }
 
   constructor() { }
 
   ngOnInit() {
+
     if(this.scheduleValue != undefined && this.scheduleValue > 0)
-      this.gerarParcelasComValor(this.scheduleValue);
+      this.generateInstallmentsItems(this.scheduleValue);
+    else {
+      this.generateInstallmentsItems(0);
+    }
   }
 
-  
-  gerarParcelasComValor(value){
+  generateInstallmentsItems(value){
+      this.installments = [];
+      let baseDate: any;
+      let _value = parseFloat(value);
+      
+      if(isNaN(_value))
+        _value = 0;
+      
+      let installmentValue = _value/this.installmentsQuantity;
+
       for(let i = 0 ; i < this.installmentsQuantity; i++)
       {
-          let year = new Date(this.scheduleDate).getUTCFullYear();
-          let month = new Date(this.scheduleDate).getUTCMonth(); Calcular data baseada na última parcela !!!!!
-          let day = new Date(this.scheduleDate).getUTCDate();
+          if(baseDate == null)
+            baseDate = this.scheduleDate;
+
+          let year = new Date(baseDate).getUTCFullYear();
+          let month = new Date(baseDate).getUTCMonth(); 
+          let day = new Date(baseDate).getUTCDate();
           let formattedDate = new Date(year,month,day);
-          let nextDate  = new Date(formattedDate.setMonth(formattedDate.getMonth() + 1));
+          let installmentDate  = new Date(formattedDate.setMonth(formattedDate.getMonth() + 1));
+          let stringDate = installmentDate.getFullYear() + "-" + ("0" + (installmentDate.getMonth()+1)).slice(-2) + "-" + ("0" + (installmentDate.getUTCDate())).slice(-2);
+          
           let installment = 
           { 
-            "value": value/this.arrayQuantity,
-            "dueDate": nextDate,
+            "index":i + 1,
+            "value": installmentValue,
+            "date": stringDate,
             "description":this.scheduleDescription,
             "reference":this.scheduleReference
           }
 
           this.installments.push(installment);
+          baseDate = installmentDate;
       }
   }
-
-
-  generateInstallmentsItems(){
-    this.arrayQuantity = new Array();
-    for(var x = 0; x < this.installmentsQuantity; x++){
-      this.arrayQuantity.push(1);
-    }
-    
-  }
-
 }

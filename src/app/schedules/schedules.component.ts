@@ -26,10 +26,10 @@ export class SchedulesComponent implements OnInit {
 
   blockRecurrence: boolean = false;
   blockInstallments: boolean = false;
+  totalValue: any;
 
- 
   
-
+  @Output() testeEvento: EventEmitter<number> = new EventEmitter<number>();
   @ViewChild('collapseRecurrenceLocal') collapseRecurrenceLocal: any;
   @ViewChild('collapseInstallmentsLocal') collapseInstallmentsLocal: any;
   @ViewChild('collapseBillingLocal') collapseBillingLocal: any;
@@ -40,6 +40,12 @@ export class SchedulesComponent implements OnInit {
 
   ngOnInit() {
   }
+
+
+  changeValue(){
+    this.testeEvento.emit(this.totalValue);
+  }
+  
 
   enableRecurrence(){
 

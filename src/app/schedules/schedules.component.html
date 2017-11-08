@@ -28,7 +28,7 @@
     </div>
     <div class="col-sm-4">
       <label>Valor</label>
-      <input type="text" class="form-control" placeholder="0,00" [(ngModel)]="totalValue">
+      <input type="text" class="form-control" placeholder="0,00" [(ngModel)]="totalValue" (change)="changeValue">
     </div>
     <div class="col-sm-4">
       <label>Categoria</label>
@@ -85,7 +85,9 @@
             <ui-switch id="checkedBilling" size="small" color="rgb(35,164,206)" 
               [disabled]="blockInstallments" 
               [checked]="installmentsEnabled" 
-              (click)="enableInstallments()"></ui-switch>
+              (click)="enableInstallments()"
+              
+              ></ui-switch>
             <label class="lb-center lb-link" (click)="enableInstallments()">
                 Adicionar parcelas
             </label>
