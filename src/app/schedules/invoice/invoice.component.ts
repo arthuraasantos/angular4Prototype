@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-schedules-invoice',
@@ -10,6 +10,8 @@ export class InvoiceComponent implements OnInit {
   invoice: any =  {
       sendWhen: "1"
   }
+
+  @Input() billingEnabled: boolean = false;
   constructor() { }
 
   ngOnInit() {

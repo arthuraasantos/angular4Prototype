@@ -6,11 +6,11 @@
   <div class="row">
     <div class="col-sm-9">
       <label>Vencimento</label>
-      <input type="date" class="form-control date">
+      <input type="date" class="form-control date" [(ngModel)]="dueDate">
     </div>
     <div class="col-sm-3">
       <label>Previsto para</label>
-      <input type="date" class="form-control date">
+      <input type="date" class="form-control date" [(ngModel)]="predictionDate">
     </div>
   </div>
   <div class="row">
@@ -21,9 +21,9 @@
       <label>Nome</label>
       <select class="form-control">
         <option>Selecione um cliente...</option>
-        <option>Receita com serviços</option>
-        <option>Receita com vendas</option>
-        <option>Outras</option>
+        <option>Twinings of London Ltda</option>
+        <option>Wd 40 Ltda</option>
+        <option>Samsung SA</option>
       </select>
     </div>
     <div class="col-sm-4">
@@ -103,7 +103,7 @@
         </div>
         <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
           <div class="card-body">
-            <app-schedules-installments [scheduleValue]="totalValue"></app-schedules-installments>
+            <app-schedules-installments [scheduleValue]="totalValue" [scheduleDate]="dueDate"></app-schedules-installments>
           </div>
         </div>
       </div>
@@ -152,7 +152,7 @@
         </div>
         <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordion">
           <div class="card-body">
-            <app-schedules-invoice></app-schedules-invoice>
+            <app-schedules-invoice [billingEnabled]="billingEnabled"></app-schedules-invoice>
           </div>
         </div>
       </div>

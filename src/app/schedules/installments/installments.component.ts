@@ -1,25 +1,19 @@
-import { Component, Output, Input, OnInit, EventEmitter } from '@angular/core';
+import { Component, Output, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-schedules-installments',
   templateUrl: './installments.component.html',
   styleUrls: ['./installments.component.css']
 })
-export class InstallmentsComponent implements OnInit {
+export class InstallmentsComponent implements OnInit, OnChanges {
   installmentsQuantity: number = 1;
   arrayQuantity: any = [1];
-  installments: any = [];
+  @Input() installments: any = [];
 
   @Input() scheduleValue: number;  
-  @Input() scheduleDate: any = "2017-11-06";  
+  @Input() scheduleDate: any;  
   @Input() scheduleDescription: string = "Teste";  
   @Input() scheduleReference: string = "20171106";
-
-  @Output() notify = new EventEmitter();
-  
-  onClick() {
-    this.notify.emit('Click from nested component');
-  }
 
   constructor() { }
 
@@ -31,6 +25,15 @@ export class InstallmentsComponent implements OnInit {
       this.generateInstallmentsItems(0);
     }
   }
+
+  ngOnChanges(changes: SimpleChanges): void{
+
+    if(changes.scheduleValue) this.generateInstallmentsItems(changes.scheduleValue.currentValue);
+    
+    if(changes.scheduleDate)  this.generateInstallmentsItems(this.scheduleValue);
+    
+    
+  }  
 
   generateInstallmentsItems(value){
       this.installments = [];
@@ -51,7 +54,11 @@ export class InstallmentsComponent implements OnInit {
           let month = new Date(baseDate).getUTCMonth(); 
           let day = new Date(baseDate).getUTCDate();
           let formattedDate = new Date(year,month,day);
-          let installmentDate  = new Date(formattedDate.setMonth(formattedDate.getMonth() + 1));
+          let installmentDate: any;
+          if(i == 0)
+            installmentDate  = new Date(formattedDate.setMonth(formattedDate.getMonth()));
+          else 
+            installmentDate  = new Date(formattedDate.setMonth(formattedDate.getMonth() + 1));
           let stringDate = installmentDate.getFullYear() + "-" + ("0" + (installmentDate.getMonth()+1)).slice(-2) + "-" + ("0" + (installmentDate.getUTCDate())).slice(-2);
           
           let installment = 

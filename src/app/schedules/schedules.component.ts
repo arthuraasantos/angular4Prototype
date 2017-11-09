@@ -1,11 +1,11 @@
-import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
+import { Component, OnInit, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-schedules',
   templateUrl: './schedules.component.html',
   styleUrls: ['./schedules.component.css']
 })
-export class SchedulesComponent implements OnInit {
+export class SchedulesComponent implements OnInit{
 
   schedule:any = {}; 
 
@@ -27,9 +27,10 @@ export class SchedulesComponent implements OnInit {
   blockRecurrence: boolean = false;
   blockInstallments: boolean = false;
   totalValue: any;
+  dueDate: any = new Date().toISOString().slice(0,10);
+  predictionDate: any = new Date().toISOString().slice(0,10);
 
   
-  @Output() testeEvento: EventEmitter<number> = new EventEmitter<number>();
   @ViewChild('collapseRecurrenceLocal') collapseRecurrenceLocal: any;
   @ViewChild('collapseInstallmentsLocal') collapseInstallmentsLocal: any;
   @ViewChild('collapseBillingLocal') collapseBillingLocal: any;
@@ -41,11 +42,7 @@ export class SchedulesComponent implements OnInit {
   ngOnInit() {
   }
 
-
-  changeValue(){
-    this.testeEvento.emit(this.totalValue);
-  }
-  
+ 
 
   enableRecurrence(){
 
@@ -180,3 +177,5 @@ export class SchedulesComponent implements OnInit {
   }
 
 }
+
+

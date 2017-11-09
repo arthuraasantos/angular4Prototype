@@ -1,12 +1,10 @@
 <div class="row title">
   <div class="col-sm-3">
     <h6 class="bq">Número de parcelas:</h6>
-    <span (click)='onClick()'>Click me please!</span>
     <input type="text" class="form-control" [(ngModel)]="installmentsQuantity" (ngModelChange)="generateInstallmentsItems(scheduleValue)" style="width:50px;">
   </div>
 </div>    
 <div class="row">
-
 <table class="table table-responsive" *ngIf="installments.length > 0">
   <thead>
     <tr>
@@ -19,11 +17,11 @@
   <tbody>
       <tr *ngFor="let item of installments">
         <td>
-            <input type="text" class="form-control" [(ngModel)]="item.value" >
+            <input type="text" class="form-control" [(ngModel)]="item.value" [disabled]="item.index == 1" >
         </td>
-        <td><input type="date" class="form-control date" [(ngModel)]="item.date" id="testeArthur" ></td>
-        <td><input type="text" class="form-control" [(ngModel)]="item.description"></td>
-        <td><input type="text" class="form-control" [(ngModel)]="item.reference" ></td>
+        <td><input type="date" class="form-control date" [(ngModel)]="item.date" id="testeArthur" [disabled]="item.index == 1" ></td>
+        <td><input type="text" class="form-control" [(ngModel)]="item.description" [disabled]="item.index == 1"></td>
+        <td><input type="text" class="form-control" [(ngModel)]="item.reference" [disabled]="item.index == 1" ></td>
           
       </tr>
   </tbody>
@@ -31,9 +29,9 @@
 </div>
 <div class="row">
     <div class="col-sm-12">
-        <label class="alert alert-warning">
+        <label class="alert alert-info">
           <i class="fa fa-exclamation-circle"></i>
-          Este agendamento é a primeira das parcelas
+          O recebimento que está sendo criado é a primeira das parcelas
         </label>
     </div>
 </div>
