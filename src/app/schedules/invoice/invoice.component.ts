@@ -12,6 +12,7 @@ export class InvoiceComponent implements OnInit {
   }
 
   @Input() billingEnabled: boolean = false;
+  @Input() recurrenceEnabled: boolean = false;
   constructor() { }
 
   ngOnInit() {

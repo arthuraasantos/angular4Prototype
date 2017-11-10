@@ -2,7 +2,7 @@
   <div class="col-md-6">
       <div class="form-check">
         <label class="form-check-label">
-          <input class="form-check-input" type="radio" [(ngModel)]="billing.when" name="billingWhen" value="1" >
+          <input class="form-check-input" type="radio" [(ngModel)]="billing.when" name="billingWhen" value="0" >
           <label>Enviar
               <input type="text" class="form-control" [(ngModel)]="billing.dayWhen"  [disabled]="billing.when == 0"> dias antes o vencimento
           </label>
@@ -10,7 +10,7 @@
       </div>
       <div class="form-check">
           <label class="form-check-label">
-            <input class="form-check-input" type="radio" [(ngModel)]="billing.when" name="billingWhen" value="0" (click)="clearDayWhen()" >
+            <input class="form-check-input" type="radio" [(ngModel)]="billing.when" name="billingWhen" value="1" [disabled]="recurrenceEnabled"  (click)="clearDayWhen()" >
             Enviar imediatamente(assim que o agendamento for criado)
           </label>
       </div>      

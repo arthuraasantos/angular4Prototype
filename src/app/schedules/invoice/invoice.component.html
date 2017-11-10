@@ -15,7 +15,7 @@
       </div>      
       <div class="form-check">
           <label class="form-check-label">
-            <input class="form-check-input" type="radio" [(ngModel)]="invoice.sendWhen" name="exampleRadios" value="0" checked>
+            <input class="form-check-input" type="radio" [(ngModel)]="invoice.sendWhen" name="exampleRadios" [disabled]="recurrenceEnabled"  value="0" checked>
             Enviar imediatamente(assim que o agendamento for criado)
           </label>
       </div>      

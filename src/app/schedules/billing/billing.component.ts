@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-schedules-billing',
@@ -8,11 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class BillingComponent implements OnInit {
 
   billing: any = {
-    when: "1",
-    dayWhen: null
+    when: "0",
+    dayWhen: "10"
   };
 
-  teste: number = 0;
+  @Input() recurrenceEnabled: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
